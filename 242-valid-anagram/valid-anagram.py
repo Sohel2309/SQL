@@ -6,4 +6,10 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return Counter(s) == Counter(t)
+        freq = Counter(s)
+        freq1 = Counter(t)
+
+        if freq == freq1:
+            return True
+        else:
+            return False
