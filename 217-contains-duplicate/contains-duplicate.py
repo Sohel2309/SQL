@@ -4,11 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        seen =set()
+
+        seen = set()
 
         for x in nums:
             if x in seen:
                 return True
-            else:
-                seen.add(x) 
+            seen.add(x)
         return False
+       
