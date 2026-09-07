@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter,defaultdict
 class Solution(object):
     def isAnagram(self, s, t):
         """
@@ -6,10 +6,17 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        freq = Counter(s)
-        freq1 = Counter(t)
+        dict1 = defaultdict()
+        dict2 = defaultdict()
 
-        if freq == freq1:
+        for char in s:
+            dict1[char] = dict1.get(char,0) + 1
+        
+        for i in t:
+            dict2[i] = dict2.get(i,0) + 1
+        
+        if dict1 == dict2:
             return True
-        else:
-            return False
+        
+        return False
+        
