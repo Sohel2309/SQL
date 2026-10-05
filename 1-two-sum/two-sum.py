@@ -1,16 +1,19 @@
 class Solution(object):
     def twoSum(self, nums, target):
+
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
-        for x in range(len(nums)):
-            for y in range(len(nums)):
-                if x != y:
-                    if nums[x] + nums[y] == target:
-                        return(x,y)
-                   
+        seen = {}
+
+        for i in range(len(nums)):
+            needed = target - nums[i]
+            if needed in seen:
+                return (i ,seen[needed])
+            else : seen[nums[i]] = i
+
 
 
 
