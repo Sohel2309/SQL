@@ -11,8 +11,8 @@ class Solution(object):
         for right in range(len(numbers)):
             needed = target - numbers[right]
             if needed in seen:
-                return [seen[needed]+1,left+1]
-            else:
-                seen[numbers[right]] = right
-            left+=1
+                return [seen[needed]+1,right+1]
+            else: 
+                seen[numbers[right]] =right
+            left +=1 
         
