@@ -7,9 +7,8 @@ class Solution(object):
 
         seen = set()
 
-        for x in nums:
-            if x in seen:
+        for num in nums:
+            if num in seen:
                 return True
-            seen.add(x)
+            else: seen.add(num)
         return False
-       
