@@ -3,16 +3,18 @@ class Solution(object):
         """
         :type numbers: List[int]
         :type target: int
-        :rtype: List[int]
+        :
         """
-        seen = {}
         left = 0
+        right = len(numbers) -1
 
-        for right in range(len(numbers)):
-            needed = target - numbers[right]
-            if needed in seen:
-                return [seen[needed]+1,right+1]
+        while left < right:
+            if numbers[left] + numbers[right] > target:
+                right -= 1
+            elif numbers[left] + numbers[right] < target:
+                left += 1
             else: 
-                seen[numbers[right]] =right
-            left +=1 
+                return (left+1 , right+1)
         
+        
+
