@@ -8,5 +8,5 @@ from x)
 
 select distinct num as ConsecutiveNums
 from y
-group by grp ,num
+group by grp 
 having count(*) >=3
